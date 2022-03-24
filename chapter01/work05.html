@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>work05</title>
+<style>
+body, div, p {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+.red-text {
+  color: #ff0000;
+  font-size: 2em;
+  border: 1px solid #ff0000;
+  margin: 10px;
+  padding: 10px;
+}
+.blue-text {
+  color: #0000ff;
+  font-size: 2em;
+  border: 1px solid #0000ff;
+  margin: 10px;
+  padding: 10px;
+}
+</style>
+</head>
+<body>
+  <h1>音楽</h1>
+  <ul>
+    <li class="red-text">ロック</li>
+    <li class="no-text">ポップス</li>
+    <li class="red-text">アニソン</li>
+    <li class="no-text">ボーカロイド</li>
+    <li class="no-text">クラシック</li>
+  </ul>
+</body>
+<script>
+// クラス名を指定してタグを取得
+const tagList = document.getElementsByClassName('no-text');
+// 複数のタグなので繰り返し処理を行う
+for(const tag of tagList) {
+  // クラス属性を追加
+  tag.setAttribute('class', 'no-text blue-text');
+}
+</script>
+</html>

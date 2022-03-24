@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>work02</title>
+<style>
+body, div, p {
+  margin: 0;
+  padding: 0;
+}
+</style>
+</head>
+<body>
+  <h1>天気予報</h1>
+</body>
+<script>
+// h2タグオブジェクト作成
+const h2Tag = document.createElement('h2');
+// h2タグのテキスト作成
+const h2Text = document.createTextNode("晴れ時々くもり");
+// h2タグのテキスト部分を追加
+h2Tag.appendChild(h2Text);
+// bodyタグの下層にh2タグを追加
+document.body.appendChild(h2Tag);
+</script>
+</html>

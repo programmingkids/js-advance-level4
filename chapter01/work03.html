@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>work03</title>
+<style>
+body, div, p {
+  margin: 0;
+  padding: 0;
+}
+.red-text {
+  color: #ff0000;
+  font-size: 2em;
+  border: 1px solid #ff0000;
+  margin: 10px;
+  padding: 10px;
+}
+.purple-text {
+  color: #800080;
+  font-size: 2em;
+  border: 1px solid #800080;
+  margin: 10px;
+  padding: 10px;
+}
+</style>
+</head>
+<body>
+  <h1>フルーツ</h1>
+</body>
+<script>
+// タグオブジェクト作成
+const appleTag = document.createElement('div');
+// タグのテキスト作成
+const appleText = document.createTextNode("リンゴ");
+// タグのテキスト部分を追加
+appleTag.appendChild(appleText);
+// タグにclass属性を追加
+appleTag.setAttribute('class', 'red-text');
+// bodyタグの下層にタグを追加
+document.body.appendChild(appleTag);
+
+// タグオブジェクト作成
+const grapeTag = document.createElement('div');
+// タグのテキスト作成
+const grapeText = document.createTextNode("グレープ");
+// タグのテキスト部分を追加
+grapeTag.appendChild(grapeText);
+// タグにclass属性を追加
+grapeTag.setAttribute('class', 'purple-text');
+// bodyタグの下層にタグを追加
+document.body.appendChild(grapeTag);
+</script>
+</html>

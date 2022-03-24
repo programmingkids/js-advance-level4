@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>work07</title>
+<style>
+body, div, p {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+.red-text {
+  color: #ff0000;
+  font-size: 2em;
+  border: 1px solid #ff0000;
+  margin: 10px;
+  padding: 10px;
+}
+</style>
+</head>
+<body>
+  <h1>都市名</h1>
+  <ul id="cities">
+    <li>東京</li>
+    <li>ニューヨーク</li>
+    <li>ロサンゼルス</li>
+    <li>ロンドン</li>
+    <li>パリ</li>
+  </ul>
+  <div id="result" class="red-text"></div>
+</body>
+<script>
+// 空の配列の定義
+const cities = [];
+
+// IDを指定してタグの取得
+const ulTag = document.getElementById('cities');
+// ulタグの下層のliタグのオブジェクトを取得
+const liTags = ulTag.getElementsByTagName('li');
+
+// liタグに繰り返し処理を行う
+for(const liTag of liTags) {
+  // liタグの文字列を配列に追加
+  cities.push(liTag.innerHTML);
+}
+
+// IDを指定して結果を表示するタグを取得
+const resultTag = document.getElementById('result');
+
+// 配列をカンマで結合して、結果を表示するタグに表示
+resultTag.innerHTML = cities.join(',');
+</script>
+</html>

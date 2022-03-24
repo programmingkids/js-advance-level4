@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>work01</title>
+<style>
+body, div, p {
+  margin: 0;
+  padding: 0;
+}
+</style>
+</head>
+<body>
+</body>
+<script>
+// h1タグオブジェクト作成
+const h1Tag = document.createElement('h1');
+// h1タグのテキスト作成
+const h1Text = document.createTextNode("Hello, this is h1");
+// h2タグのテキスト部分を追加
+h1Tag.appendChild(h1Text);
+// bodyタグの下層にh1タグを追加
+document.body.appendChild(h1Tag);
+</script>
+</html>
