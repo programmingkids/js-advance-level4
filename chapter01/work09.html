@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>work09</title>
+<style>
+body, div, p {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+.orange-text {
+  background-color: #FF8C00;
+  color: #ffffff;
+  font-size: 1em;
+  margin: 10px;
+  padding: 10px;
+}
+</style>
+</head>
+<body>
+  <h1>国名と首都</h1>
+  <ul id="nations">
+  </ul>
+</body>
+<script>
+// 配列の定義
+const nations = {
+  '日本': '東京',
+  'アメリカ':'ワシントンDC',
+  'イギリス':'ロンドン',
+  'フランス':'パリ',
+};
+
+// ulタグのオブジェクトを取得
+const ulTag = document.getElementById('nations');
+
+// オブジェクトに繰り返し処理
+for(const [nation, city] of Object.entries(nations)) {
+  // liタグのオブジェクト作成
+  const liTag = document.createElement('li');
+  // liタグのテキスト部分に文字を代入
+  liTag.innerHTML = `${nation}の首都「${city}」`;
+  // liタグのクラス属性の設定
+  liTag.setAttribute('class', 'orange-text');
+  // liタグをulタグの下層に追加
+  ulTag.appendChild(liTag);
+}
+</script>
+</html>
