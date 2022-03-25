@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>work10</title>
+<style>
+body, div, p {
+  margin: 0;
+  padding: 0;
+}
+h1, div {
+  margin: 10px;
+}
+#links {
+  font-size: 1em;
+  padding: 0.5em;
+}
+</style>
+</head>
+<body>
+  <h1>ページ移動</h1>
+  <div>
+    リンク：
+    <select id="links">
+      <option value="https://www.yahoo.co.jp/">Yahoo</option>
+      <option value="https://www.amazon.co.jp/">Amazon</option>
+      <option value="https://www.youtube.com">Youtube</option>
+      <option value="https://www.rakuten.co.jp/">Rakuten</option>
+    </select>
+  </div>
+  <div>
+    <button id="btn">クリック</button>
+  </div>
+</body>
+<script>
+// idがbtnのタグを取得
+const btn = document.getElementById('btn');
+// btnをクリックしたら
+btn.onclick = () => {
+  // idがlinksのタグを取得
+  const linkTag = document.getElementById('links');
+  // セレクトボックスの選択値を取得して、ページ移動
+  location.href = linkTag.value;
+};
+</script>
+</html>

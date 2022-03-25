@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>work08</title>
+<style>
+body, div, p {
+  margin: 0;
+  padding: 0;
+}
+h1, div {
+  margin: 10px;
+}
+#result {
+  margin: 10px;
+  padding: 10px;
+  color: #ff0000;
+  border: 1px solid #ff0000;
+}
+</style>
+</head>
+<body>
+  <h1>チェックボックス</h1>
+  <div>
+    好きな科目：
+    <label for="japanese">
+      <input type="checkbox" name="subject" id="japanese" value="Japanese">国語
+    </label>
+    <label for="math">
+      <input type="checkbox" name="subject" id="math" value="Math">数学
+    </label>
+    <label for="english">
+      <input type="checkbox" name="subject" id="english" value="English">英語
+    </label>
+    <label for="science">
+      <input type="checkbox" name="subject" id="science" value="Science">理科
+    </label>
+    <label for="social-study">
+      <input type="checkbox" name="subject" id="social-study" value="Social-study">社会
+    </label>
+  </div>
+  <div>
+    <button id="btn">クリック</button>
+  </div>
+  <div id="result">未入力</div>
+</body>
+<script>
+// idがresultのタグを取得
+const result = document.getElementById('result');
+// idがbtnのタグを取得
+const btn = document.getElementById('btn');
+// btnをクリックしたら
+btn.onclick = () => {
+  // nameがsubjectのタグを取得
+  const subjectTags = document.getElementsByName('subject');
+  
+  // 結果の文字列を代入する変数
+  let text = '';
+  
+  // subjectTagsに繰り返し処理を適用
+  for(const subjectTag of subjectTags) {
+    // チェックボックスのチェックがオンの場合
+    if( subjectTag.checked ) {
+      text += subjectTag.value + ',';
+    }
+  }
+  
+  // チェックボックスの値を取得して表示
+  result.innerHTML = `好きな科目は${text}ですね`;
+};
+</script>
+</html>

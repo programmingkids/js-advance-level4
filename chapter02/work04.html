@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>work04</title>
+<style>
+body, div, p {
+  margin: 0;
+  padding: 0;
+}
+h1, div {
+  margin: 10px;
+}
+#result {
+  margin: 10px;
+  padding: 10px;
+  color: #ff0000;
+  border: 1px solid #ff0000;
+}
+</style>
+</head>
+<body>
+  <h1>ユーザーエージェント</h1>
+  <div>
+    <button id="btn">クリック</button>
+  </div>
+  <div id="result">未入力</div>
+</body>
+<script>
+// idがresultのタグを取得
+const result = document.getElementById('result');
+// idがbtnのタグを取得
+const btn = document.getElementById('btn');
+// btnをクリックしたら
+btn.onclick = () => {
+  // ユーザーエージェントを表示
+  result.innerHTML = navigator.userAgent;
+};
+</script>
+</html>

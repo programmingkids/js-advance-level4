@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>work01</title>
+<style>
+body, div, p {
+  margin: 0;
+  padding: 0;
+}
+h1, div {
+  margin: 10px;
+}
+</style>
+</head>
+<body>
+  <h1>アラート</h1>
+  <div>
+    <button id="btn">クリック</button>
+  </div>
+</body>
+<script>
+// idがbtnのタグを取得
+const btn = document.getElementById('btn');
+// btnをクリックしたら
+btn.onclick = () => {
+  // アラート画面を表示
+  alert('これはアラート画面');
+};
+</script>
+</html>

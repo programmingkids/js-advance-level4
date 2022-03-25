@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>work07</title>
+<style>
+body, div, p {
+  margin: 0;
+  padding: 0;
+}
+h1, div {
+  margin: 10px;
+}
+#result {
+  margin: 10px;
+  padding: 10px;
+  color: #ff0000;
+  border: 1px solid #ff0000;
+}
+</style>
+</head>
+<body>
+  <h1>ラジオボタン</h1>
+  <div>
+    好きな食べ物：
+    <label for="pizza">
+      <input type="radio" name="food" id="pizza" value="pizza">ピザ
+    </label>
+    <label for="sushi">
+      <input type="radio" name="food" id="sushi" value="sushi">寿司
+    </label>
+    <label for="curry">
+      <input type="radio" name="food" id="curry" value="curry">カレー
+    </label>
+    <label for="ramen">
+      <input type="radio" name="food" id="ramen" value="ramen">ラーメン
+    </label>
+  </div>
+  <div>
+    <button id="btn">クリック</button>
+  </div>
+  <div id="result">未入力</div>
+</body>
+<script>
+// idがresultのタグを取得
+const result = document.getElementById('result');
+// idがbtnのタグを取得
+const btn = document.getElementById('btn');
+// btnをクリックしたら
+btn.onclick = () => {
+  // nameがfoodのタグを取得
+  const foodTags = document.getElementsByName('food');
+  
+  // foodTagsに繰り返し処理を適用
+  for(const foodTag of foodTags) {
+    // ラジオボタンのチェックがオンの場合
+    if( foodTag.checked ) {
+      // ラジオボタンの値を取得して表示
+      result.innerHTML = `好きな食べ物は${foodTag.value}ですね`;
+      break;
+    }
+  }
+};
+</script>
+</html>
