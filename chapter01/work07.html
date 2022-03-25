@@ -14,46 +14,52 @@ ul {
 }
 li {
   list-style: none;
-}
-.red-text {
-  color: #ff0000;
-  font-size: 2em;
-  border: 1px solid #ff0000;
   margin: 10px;
   padding: 10px;
+  background-color: #800080;
+}
+.link-text {
+  display: block;
+  color: #ffffff;
+  text-decoration:none;
+  font-size: 2em;
 }
 </style>
 </head>
 <body>
-  <h1>都市名</h1>
-  <ul id="cities">
-    <li>東京</li>
-    <li>ニューヨーク</li>
-    <li>ロサンゼルス</li>
-    <li>ロンドン</li>
-    <li>パリ</li>
+  <h1>リンク</h1>
+  <ul id="links">
   </ul>
-  <div id="result" class="red-text"></div>
 </body>
 <script>
-// 空の配列の定義
-const cities = [];
+// 配列の定義
+const links = {
+  'Yahoo': 'https://www.yahoo.co.jp/',
+  'Amazon': 'https://www.amazon.co.jp/',
+  'Youtube': 'https://www.youtube.com',
+  'Rakuten': 'https://www.rakuten.co.jp/',
+};
 
-// IDを指定してタグの取得
-const ulTag = document.getElementById('cities');
-// ulタグの下層のliタグのオブジェクトを取得
-const liTags = ulTag.getElementsByTagName('li');
+// ulタグのオブジェクトを取得
+const ulTag = document.getElementById('links');
 
-// liタグに繰り返し処理を行う
-for(const liTag of liTags) {
-  // liタグの文字列を配列に追加
-  cities.push(liTag.innerHTML);
+// 配列に繰り返し処理
+for(const [title, url] of Object.entries(links)) {
+  // aタグのオブジェクト作成
+  const aTag = document.createElement('a');
+  // aタグのhref属性の設定（リンク先の設定）
+  aTag.setAttribute('href', url);
+  // aタグのクラス属性の設定
+  aTag.setAttribute('class', 'link-text');
+  // aタグの文字列を設定
+  aTag.innerHTML = title;
+  
+  // liタグのオブジェクト作成
+  const liTag = document.createElement('li');
+  // aタグをliタグの下層に追加
+  liTag.appendChild(aTag);
+  // liタグをulタグの下層に追加
+  ulTag.appendChild(liTag);
 }
-
-// IDを指定して結果を表示するタグを取得
-const resultTag = document.getElementById('result');
-
-// 配列をカンマで結合して、結果を表示するタグに表示
-resultTag.innerHTML = cities.join(',');
 </script>
 </html>
