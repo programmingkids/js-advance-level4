@@ -8,11 +8,51 @@ body, div, p {
   margin: 0;
   padding: 0;
 }
+h1, div {
+  margin: 10px;
+}
+#name {
+  font-size: 1em;
+  padding: 0.5em;
+}
+#bloodType {
+  font-size: 1em;
+  padding: 0.5em;
+}
 </style>
 </head>
 <body>
+  <h1>入力フォーム</h1>
+  <div>
+    名前：<input type="text" id="name">
+  </div>
+  <div>
+    血液型：
+    <select id="bloodType">
+      <option value="A型">A型</option>
+      <option value="B型">B型</option>
+      <option value="O型">O型</option>
+      <option value="AB型">AB型</option>
+    </select>
+  </div>
+  <div>
+    <button id="btn">クリック</button>
+  </div>
 </body>
 <script>
-
+// idがbtnのタグを取得
+const btn = document.getElementById('btn');
+// btnをクリックしたら
+btn.onclick = () => {
+  // idがnameのタグを取得
+  const nameTag = document.getElementById('name');
+  // idがbloodTypeのタグを取得
+  const bloodTypeTag = document.getElementById('bloodType');
+  
+  // 文字列を組み立て
+  const text = `名前：${nameTag.value}\n血液型：${bloodTypeTag.value}`;
+  // アラート画面を表示
+  alert(text);
+};
 </script>
 </html>
