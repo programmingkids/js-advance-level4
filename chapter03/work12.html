@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>work12</title>
+<style>
+body, div, p {
+  margin: 0;
+  padding: 0;
+}
+h1, div {
+  margin: 10px;
+}
+#name {
+  font-size: 1em;
+  padding: 0.5em;
+}
+#age {
+  font-size: 1em;
+  padding: 0.5em;
+}
+#music {
+  font-size: 1em;
+  padding: 0.5em;
+}
+#result {
+  margin: 10px;
+  padding: 10px;
+  height: 100px;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  overflow: auto;
+}
+</style>
+<script>
+class Work12 {
+  constructor() {
+    // 各メソッドのthisをバインドする
+    this.handleOnLoad = this.handleOnLoad.bind(this);
+    this.handleFucus = this.handleFucus.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
+  }
+  
+  init() {
+    // Windowの読み込みが完了したときの動作の登録
+    window.addEventListener('load', this.handleOnLoad);
+  }
+  
+  handleOnLoad(event) {
+    // Windowが読み込まれた時に動作するメソッド
+    // idがresultのタグを取得
+    this.result = document.getElementById('result');
+    
+    // idがnameのタグを取得
+    this.nameTag = document.getElementById('name');
+    // nameタグにフォーカスしたときの処理の登録
+    this.nameTag.addEventListener('focus', this.handleFucus);
+    // nameタグがフォーカスを失ったときの処理の登録
+    this.nameTag.addEventListener('blur', this.handleBlur);
+
+    // idがageのタグを取得
+    this.ageTag = document.getElementById('age');
+    // ageタグにフォーカスしたときの処理の登録
+    this.ageTag.addEventListener('focus', this.handleFucus);
+    // ageタグがフォーカスを失ったときの処理の登録
+    this.ageTag.addEventListener('blur', this.handleBlur);
+
+    // idがmusicのタグを取得
+    this.musicTag = document.getElementById('music');
+    // musicタグにフォーカスしたときの処理の登録
+    this.musicTag.addEventListener('focus', this.handleFucus);
+    // musicタグがフォーカスを失ったときの処理の登録
+    this.musicTag.addEventListener('blur', this.handleBlur);
+  }
+  
+  handleFucus(event) {
+    // フォーカスしたときに動作するメソッド
+    // resultタグに文字を表示
+    const tagName = event.target.id;
+    this.result.innerHTML += `${tagName}にフォーカスしました<br>`;
+  }
+  
+  handleBlur(event) {
+    // フォーカスを失ったときに動作するメソッド
+    // resultタグに文字を表示
+    const tagName = event.target.id;
+    this.result.innerHTML += `${tagName}にフォーカスを失いました<br>`;
+  }
+}
+
+// クラス「Work12」のインスタンス作成
+const work12 = new Work12();
+// メソッド「init」の呼び出し
+work12.init();
+</script>
+</head>
+<body>
+  <h1>onfocus / onblurイベント</h1>
+  <div>
+    名前：<input type="text" id="name" autocomplete="off" />
+  </div>
+  <div>
+    年齢：<input type="text" id="age" autocomplete="off" />
+  </div>
+  <div>
+    好きな音楽：
+    <select id="music">
+      <option value="">選択</option>
+      <option value="rock">ロック</option>
+      <option value="pops">ポップス</option>
+      <option value="anime">アニソン</option>
+      <option value="vocaloid">ボーカロイド</option>
+    </select>
+  </div>
+  <div id="result"></div>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>work10</title>
+<style>
+body, div, p {
+  margin: 0;
+  padding: 0;
+}
+h1, div {
+  margin: 10px;
+}
+#music {
+  font-size: 1em;
+  padding: 0.5em;
+}
+#result {
+  margin: 10px;
+  padding: 10px;
+  height: 100px;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  overflow: auto;
+}
+</style>
+<script>
+class Work10 {
+  constructor() {
+    // 各メソッドのthisをバインドする
+    this.handleOnLoad = this.handleOnLoad.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+  
+  init() {
+    // Windowの読み込みが完了したときの動作の登録
+    window.addEventListener('load', this.handleOnLoad);
+  }
+  
+  handleOnLoad(event) {
+    // Windowが読み込まれた時に動作するメソッド
+    // idがresultのタグを取得
+    this.result = document.getElementById('result');
+    
+    // idがmusicのタグを取得
+    this.musicTag = document.getElementById('music');
+    // musicタグを変更したときの処理の登録
+    this.musicTag.addEventListener('change', this.handleChange);
+
+    // nameがfoodのタグを取得（複数のタグを取得）
+    this.foodTags = document.getElementsByName('food');
+    // nameがfoodのタグを配列で保持しているので、forEachで繰り返し
+    this.foodTags.forEach(foodTag => {
+      // 個別のfoodタグを変更したときの処理の登録
+      foodTag.addEventListener('change',this.handleChange);
+    });
+  }
+  
+  handleChange(event) {
+    // セレクトボックス、ラジオボタンで変更した時に動作する
+    // 入力した文字をresultのタグにコピーする
+    // 変更した値を取得
+    const value = event.target.value;
+    // resultタグに変更した値を代入
+    this.result.innerHTML = value;
+  }
+}
+
+// クラス「Work10」のインスタンス作成
+const work10 = new Work10();
+// メソッド「init」の呼び出し
+work10.init();
+</script>
+</head>
+<body>
+  <h1>onchangeイベント</h1>
+  <div>
+    好きな音楽：
+    <select id="music">
+      <option value="">選択</option>
+      <option value="rock">ロック</option>
+      <option value="pops">ポップス</option>
+      <option value="anime">アニソン</option>
+      <option value="vocaloid">ボーカロイド</option>
+    </select>
+  </div>
+  <div>
+    好きな食べ物：
+    <label for="pizza">
+      <input type="radio" name="food" id="pizza" value="pizza">ピザ
+    </label>
+    <label for="sushi">
+      <input type="radio" name="food" id="sushi" value="sushi">寿司
+    </label>
+    <label for="curry">
+      <input type="radio" name="food" id="curry" value="curry">カレー
+    </label>
+    <label for="ramen">
+      <input type="radio" name="food" id="ramen" value="ramen">ラーメン
+    </label>
+  </div>
+  <div id="result"></div>
+</body>
+</html>

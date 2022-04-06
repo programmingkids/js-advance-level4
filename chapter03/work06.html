@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>work06</title>
+<style>
+body, div, p {
+  margin: 0;
+  padding: 0;
+}
+h1, div {
+  margin: 10px;
+}
+#result {
+  margin: 10px;
+  padding: 10px;
+  color: #ff0000;
+  border: 1px solid #ff0000;
+}
+</style>
+<script>
+class Work06 {
+  constructor() {
+    // クリック回数を保持する変数
+    this.count = 0;
+    
+    // 各メソッドのthisをバインドする
+    this.handleOnLoad = this.handleOnLoad.bind(this);
+    this.handleOnClickCountUp = this.handleOnClickCountUp.bind(this);
+    this.handleOnClickCountDown = this.handleOnClickCountDown.bind(this);
+    this.handleOnClickCountReset = this.handleOnClickCountReset.bind(this);
+  }
+  
+  init() {
+    // Windowの読み込みが完了したときの動作の登録
+    window.addEventListener('load', this.handleOnLoad);
+  }
+  
+  handleOnLoad(event) {
+    // Windowが読み込まれた時に動作するメソッド
+    // idがresultのタグを取得
+    this.result = document.getElementById('result');
+    
+    // idがcountUpのタグを取得
+    this.countUpBtn = document.getElementById('countUp');
+    // countUpタグをクリックしたときの動作の登録
+    this.countUpBtn.addEventListener('click', this.handleOnClickCountUp);
+    
+    // idがcountDownのタグを取得
+    this.countDownBtn = document.getElementById('countDown');
+    // countDownタグをクリックしたときの動作の登録
+    this.countDownBtn.addEventListener('click', this.handleOnClickCountDown);
+    
+    // idがcountResetのタグを取得
+    this.countResetBtn = document.getElementById('countReset');
+    // countResetタグをクリックしたときの動作の登録
+    this.countResetBtn.addEventListener('click', this.handleOnClickCountReset);
+  }
+  
+  handleOnClickCountUp(event) {
+    // countUpタグをクリックしたときに動作するメソッド
+    // クリック回数の変数を加算
+    this.count++;
+    // resultのタグに文字を表示
+    this.result.innerHTML = `${this.count}回`;    
+  }
+  
+  handleOnClickCountDown(event) {
+    // countDownタグをクリックしたときに動作するメソッド
+    // クリック回数の変数を減算
+    this.count--;
+    // resultのタグに文字を表示
+    this.result.innerHTML = `${this.count}回`;    
+  }
+  
+  handleOnClickCountReset(event) {
+    // countResetタグをクリックしたときに動作するメソッド
+    // クリック回数の変数を0にする
+    this.count = 0;
+    // resultのタグに文字を表示
+    this.result.innerHTML = `${this.count}回`;
+  }
+}
+
+// クラス「Work06」のインスタンス作成
+const work06 = new Work06();
+// メソッド「init」の呼び出し
+work06.init();
+</script>
+</head>
+<body>
+  <h1>onclickイベント</h1>
+  <div>
+    <button id="countUp">カウントアップ</button>
+    <button id="countDown">カウントダウン</button>
+    <button id="countReset">リセット</button>
+  </div>
+  <div id="result"></div>
+</body>
+</html>

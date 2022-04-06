@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>work01</title>
+<style>
+body, div, p {
+  margin: 0;
+  padding: 0;
+}
+h1, div {
+  margin: 10px;
+}
+#result {
+  margin: 10px;
+  padding: 10px;
+  color: #ff0000;
+  border: 1px solid #ff0000;
+}
+</style>
+<script>
+// Windowの読み込みが完了したとき
+window.onload = function (event) {
+  // idがresultのタグを取得
+  const result = document.getElementById('result');
+  // resultのタグに文字を表示
+  result.innerHTML = '画面の読み込みが完了';
+};
+</script>
+</head>
+<body>
+  <h1>Window.onloadイベント</h1>
+  <div id="result"></div>
+</body>
+</html>

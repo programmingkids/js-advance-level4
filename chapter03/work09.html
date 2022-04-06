@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>work09</title>
+<style>
+body, div, p {
+  margin: 0;
+  padding: 0;
+}
+h1, div {
+  margin: 10px;
+}
+#name {
+  font-size: 1em;
+  padding: 0.5em;
+}
+#message {
+  vertical-align: top;
+  width: 250px;
+  height: 100px;
+  padding: 0.5em;
+}
+#result {
+  margin: 10px;
+  padding: 10px;
+  height: 100px;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  overflow: auto;
+}
+</style>
+<script>
+class Work09 {
+  constructor() {
+    // 各メソッドのthisをバインドする
+    this.handleOnLoad = this.handleOnLoad.bind(this);
+    this.handleInput = this.handleInput.bind(this);
+  }
+  
+  init() {
+    // Windowの読み込みが完了したときの動作の登録
+    window.addEventListener('load', this.handleOnLoad);
+  }
+  
+  handleOnLoad(event) {
+    // Windowが読み込まれた時に動作するメソッド
+    // idがresultのタグを取得
+    this.result = document.getElementById('result');
+    
+    // idがnameのタグを取得
+    this.nameTag = document.getElementById('name');
+    // nameタグに入力したときの処理の登録
+    this.nameTag.addEventListener('input', this.handleInput);
+
+    // idがmessageのタグを取得
+    this.messageTag = document.getElementById('message');
+    // messageタグに入力したときの処理の登録
+    this.messageTag.addEventListener('input', this.handleInput);
+  }
+  
+  handleInput(event) {
+    // inputタグ、textareaタグで入力したときに動作するメソッド
+    // 入力した文字をresultのタグにコピーする
+    // 入力した値を取得
+    let value = event.target.value;
+    // 改行があれば<br>に変換
+    value = value.replaceAll('\n','<br>');
+    // resultタグに入力した文字を表示
+    this.result.innerHTML = value;
+  }
+}
+
+// クラス「Work09」のインスタンス作成
+const work09 = new Work09();
+// メソッド「init」の呼び出し
+work09.init();
+</script>
+</head>
+<body>
+  <h1>oninputイベント</h1>
+  <div>
+    名前：<input type="text" id="name" autocomplete="off" />
+  </div>
+  <div>
+    伝言：<textarea id="message"></textarea>
+  </div>
+  </div>
+  <div id="result"></div>
+</body>
+</html>

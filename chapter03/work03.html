@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>work03</title>
+<style>
+body, div, p {
+  margin: 0;
+  padding: 0;
+}
+h1, div {
+  margin: 10px;
+}
+#btn {
+  margin: 10px;
+  padding: 10px;
+  color: #ffffff;
+  background-color: #0000ff;
+  cursor: pointer;
+}
+#result {
+  margin: 10px;
+  padding: 10px;
+  color: #ff0000;
+  border: 1px solid #ff0000;
+}
+</style>
+<script>
+// Windowの読み込みが完了したとき
+window.addEventListener('load', function(event){
+  // クリック回数を保持する変数
+  let count = 0;
+  
+  // idがresultのタグを取得
+  const result = document.getElementById('result');
+  // idがbtnのタグを取得
+  const btnTag = document.getElementById('btn');
+  // btnをクリックしたとき
+  btnTag.addEventListener('click', function() {
+    // クリック回数の変数を加算
+    count++;
+    // resultのタグに文字を表示
+    result.innerHTML = `${count}回クリックしました`;
+  });
+});
+</script>
+</head>
+<body>
+  <h1>onclickイベント</h1>
+  <div id="btn">クリック領域</div>
+  <div id="result"></div>
+</body>
+</html>

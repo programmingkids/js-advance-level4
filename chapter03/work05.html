@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>work05</title>
+<style>
+body, div, p {
+  margin: 0;
+  padding: 0;
+}
+h1, div {
+  margin: 10px;
+}
+#result {
+  margin: 10px;
+  padding: 10px;
+  color: #ff0000;
+  border: 1px solid #ff0000;
+}
+</style>
+<script>
+// クリック回数を保持する変数
+let count = 0;
+
+// 結果表示用タグ
+let result;
+// カウントアップボタンタグ
+let countUpBtn;
+// カウントダウンボタンタグ
+let countDownBtn;
+// カウントリセットボタンタグ
+let countResetBtn;
+
+const handleOnLoad = (event) => {
+  // idがresultのタグを取得
+  result = document.getElementById('result');
+  
+  // idがcountUpのタグを取得
+  countUpBtn = document.getElementById('countUp');
+  // countUpタグをクリックしたときの動作の登録
+  countUpBtn.addEventListener('click', handleOnClickCountUp);
+  
+  // idがcountDownのタグを取得
+  countDownBtn = document.getElementById('countDown');
+  // countDownタグをクリックしたときの動作の登録
+  countDownBtn.addEventListener('click', handleOnClickCountDown);
+  
+  // idがcountResetのタグを取得
+  countResetBtn = document.getElementById('countReset');
+  // countResetタグをクリックしたときの動作の登録
+  countResetBtn.addEventListener('click', handleOnClickCountReset);
+};
+
+const handleOnClickCountUp = (event) => {
+  // クリック回数の変数を加算
+  count++;
+  // resultのタグに文字を表示
+  result.innerHTML = `${count}回`;
+};
+
+const handleOnClickCountDown = (event) => {
+  // クリック回数の変数を減算
+  count--;
+  // resultのタグに文字を表示
+  result.innerHTML = `${count}回`;
+};
+
+const handleOnClickCountReset = (event) => {
+  // クリック回数の変数を0にする
+  count = 0;
+  // resultのタグに文字を表示
+  result.innerHTML = `${count}回`;
+};
+
+// Windowの読み込みが完了したときの動作の登録
+window.addEventListener('load', handleOnLoad);
+</script>
+</head>
+<body>
+  <h1>onclickイベント</h1>
+  <div>
+    <button id="countUp">カウントアップ</button>
+    <button id="countDown">カウントダウン</button>
+    <button id="countReset">リセット</button>
+  </div>
+  <div id="result"></div>
+</body>
+</html>
