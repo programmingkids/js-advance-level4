@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>work07</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+<script type="text/javascript" src="app.js"></script>
+</head>
+<body>
+  <h1>お小遣い帳</h1>
+  <div id="control">
+    <div>
+      項目：<input type="text" id="item" autocomplete="off" />
+    </div>
+    <div>
+      入出金：
+      <select id="payment">
+        <option value="">選択</option>
+        <option value="in">入金</option>
+        <option value="out">出金</option>
+      </select>
+    </div>
+    <div>
+      金額：<input type="text" id="amount" autocomplete="off"/>
+    </div>
+    <div>
+      <button id="btn">登録</button>
+    </div>
+  </div>
+  <!-- end of control -->
+  <table>
+    <thead>
+      <tr>
+        <th>項目</th>
+        <th>入金</th>
+        <th>出金</th>
+        <th>残金</th>
+      </tr>
+    </thead>
+    <tbody id="result">
+    </tbody>
+  </table>
+  <!-- end of table -->
+</body>
+</html>

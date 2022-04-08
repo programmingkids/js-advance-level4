@@ -1,0 +1,34 @@
+body, div, p {
+  margin: 0;
+  padding: 0;
+}
+h1, div {
+  margin: 10px;
+}
+#item, #amount, #payment {
+  font-size: 1em;
+  padding: 0.3em;
+}
+table {
+  margin: 10px;
+  width: 90%;
+  text-align: center;
+  border-collapse: collapse;
+  border-spacing: 0;
+  background: #cdf4f0;
+  table-layout: fixed;
+}
+table tr:nth-child(2n+1) {
+  background: #e9faf9;
+}
+table th {
+  padding: 8px;
+  border: solid 1px #ffffff;
+  background: #778ca3;
+  color: #ffffff;
+}
+table td {
+  padding: 8px;
+  border: solid 1px #ffffff;
+  word-break : break-all;
+}
