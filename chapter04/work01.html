@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>work01</title>
+<style>
+body, div, p {
+  margin: 0;
+  padding: 0;
+}
+h1, div {
+  margin: 10px;
+}
+#result {
+  margin: 10px;
+  padding: 10px;
+  color: #ff0000;
+  border: 1px solid #ff0000;
+}
+</style>
+<script>
+class Work01 {
+  constructor() {
+    // 各メソッドのthisをバインドする
+    this.handleOnLoad = this.handleOnLoad.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.handleSetTimeout = this.handleSetTimeout.bind(this);
+  }
+  
+  init() {
+    // Windowの読み込みが完了したときの動作の登録
+    window.addEventListener('load', this.handleOnLoad);
+  }
+  
+  handleOnLoad(event) {
+    // Windowが読み込まれた時に動作するメソッド
+    // idがresultのタグを取得
+    this.result = document.getElementById('result');
+    
+    // idがbtnのタグを取得
+    this.btnTag = document.getElementById('btn');
+    // btnタグをクリックしたときの処理の登録
+    this.btnTag.addEventListener('click', this.handleClick);
+  }
+  
+  handleClick(event) {
+    // クリックしたときに動作するメソッド
+    // タイマーを起動
+    setTimeout(this.handleSetTimeout, 2000);
+  }
+  
+  handleSetTimeout() {
+    // resultタグに文字を表示
+    this.result.innerHTML += '2秒後に表示します<br>';
+  }
+}
+
+// クラス「Work01」のインスタンス作成
+const work01 = new Work01();
+// メソッド「init」の呼び出し
+work01.init();
+</script>
+</head>
+<body>
+  <h1>setTimeoutで待機</h1>
+  <div>
+    <button id="btn">クリック</button>
+  </div>
+  <div id="result"></div>
+</body>
+</html>

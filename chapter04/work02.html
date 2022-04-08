@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>work02</title>
+<style>
+body, div, p {
+  margin: 0;
+  padding: 0;
+}
+h1, div {
+  margin: 10px;
+}
+#result {
+  margin: 10px;
+  padding: 10px;
+  color: #ff0000;
+  border: 1px solid #ff0000;
+}
+</style>
+<script>
+class Work02 {
+  constructor() {
+    // 各メソッドのthisをバインドする
+    this.handleOnLoad = this.handleOnLoad.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.handleSetInterval = this.handleSetInterval.bind(this);
+  }
+  
+  init() {
+    // Windowの読み込みが完了したときの動作の登録
+    window.addEventListener('load', this.handleOnLoad);
+  }
+  
+  handleOnLoad(event) {
+    // Windowが読み込まれた時に動作するメソッド
+    // idがresultのタグを取得
+    this.result = document.getElementById('result');
+    
+    // カウンタ変数の初期化
+    this.count = 0;
+    
+    // idがbtnのタグを取得
+    this.btnTag = document.getElementById('btn');
+    // btnタグをクリックしたときの処理の登録
+    this.btnTag.addEventListener('click', this.handleClick);
+  }
+  
+  handleClick(event) {
+    // クリックしたときに動作するメソッド
+    // timerが起動中は多重起動しない
+    if( this.timer != null ) {
+      return;
+    }
+    // タイマーを起動　1秒ごとに呼び出す
+    this.timer = setInterval(this.handleSetInterval, 1000);
+  }
+  
+  handleSetInterval() {
+    // カウンタ変数を加算
+    this.count++;
+    // resultタグに文字を表示
+    this.result.innerHTML = this.count;
+    // カウンタ変数が10を超えたらタイマーを停止
+    if( this.count >= 10 ) {
+      // タイマーを停止
+      clearInterval(this.timer);
+      // 各変数を初期化
+      this.timer = null;
+      this.count = 0;
+    }
+  }
+}
+
+// クラス「Work02」のインスタンス作成
+const work02 = new Work02();
+// メソッド「init」の呼び出し
+work02.init();
+</script>
+</head>
+<body>
+  <h1>setIntervalでカウンタ</h1>
+  <div>
+    <button id="btn">クリック</button>
+  </div>
+  <div id="result"></div>
+</body>
+</html>

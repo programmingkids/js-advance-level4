@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>work06</title>
+<style>
+body, div, p {
+  margin: 0;
+  padding: 0;
+}
+h1, div {
+  margin: 10px;
+}
+table{
+  margin: 10px;
+  width: 80%;
+  border-collapse:separate;
+  border-spacing: 0;
+}
+table th:first-child{
+  border-radius: 5px 0 0 0;
+}
+table th:last-child{
+  border-radius: 0 5px 0 0;
+  border-right: 1px solid #3c6690;
+}
+table th{
+  text-align: center;
+  color:white;
+  background: linear-gradient(#829ebc,#225588);
+  border-left: 1px solid #3c6690;
+  border-top: 1px solid #3c6690;
+  border-bottom: 1px solid #3c6690;
+  box-shadow: 0px 1px 1px rgba(255,255,255,0.3) inset;
+  width: 25%;
+  padding: 10px 0;
+}
+table td{
+  text-align: center;
+  border-left: 1px solid #a8b7c5;
+  border-bottom: 1px solid #a8b7c5;
+  border-top:none;
+  box-shadow: 0px -3px 5px 1px #eee inset;
+  width: 25%;
+  padding: 10px 0;
+}
+table td:last-child{
+  border-right: 1px solid #a8b7c5;
+}
+table tr:last-child td:first-child {
+  border-radius: 0 0 0 5px;
+}
+table tr:last-child td:last-child {
+  border-radius: 0 0 5px 0;
+}
+</style>
+<script>
+class Work06 {
+  constructor() {
+    // 各メソッドのthisをバインドする
+    this.handleOnLoad = this.handleOnLoad.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+  }
+  
+  init() {
+    // Windowの読み込みが完了したときの動作の登録
+    window.addEventListener('load', this.handleOnLoad);
+  }
+  
+  handleOnLoad(event) {
+    // Windowが読み込まれた時に動作するメソッド
+    // idがresultのタグを取得
+    this.result = document.getElementById('result');
+    
+    // リクエスト先のURL
+    this.url = 'https://cog-study.herokuapp.com/js_advance_level4/chapter04/work06/';
+    
+    // idがbtnのタグを取得
+    this.btnTag = document.getElementById('btn');
+    // btnタグをクリックしたときの処理の登録
+    this.btnTag.addEventListener('click', this.handleClick);
+  }
+  
+  async handleClick(event) {
+    // クリックしたときに動作するメソッド
+    // 現在表示しているデータを空にする
+    this.result.innerHTML = '';
+    // URLにリクエストして、データを取得
+    const response = await fetch(this.url);
+    // JSONデータを取得
+    const data = await response.json();
+    // JSONデータは配列なので繰り返し処理
+    data.forEach((value) => {
+      // 今回はresultタグはtbodyタグ
+      // 取得データのオブジェクトを分割代入
+      const {name, price, quantity} = value;
+      // tdタグで商品名を作成
+      const tdTagName = document.createElement('td');
+      tdTagName.innerHTML = name;
+      // tdタグで金額を作成
+      const tdTagPrice = document.createElement('td');
+      tdTagPrice.innerHTML = price;
+      // tdタグで個数を作成
+      const tdTagQuantity = document.createElement('td');
+      tdTagQuantity.innerHTML = quantity;
+      // tdタグで小計を作成
+      const tdTagSubtotal = document.createElement('td');
+      tdTagSubtotal.innerHTML = parseInt(price) * parseInt(quantity);
+      
+      // trタグで1行を作成
+      const trTag = document.createElement('tr');
+      trTag.appendChild(tdTagName);
+      trTag.appendChild(tdTagPrice);
+      trTag.appendChild(tdTagQuantity);
+      trTag.appendChild(tdTagSubtotal);
+      this.result.appendChild(trTag);
+    });
+  }
+}
+
+// クラス「Work06」のインスタンス作成
+const work06 = new Work06();
+// メソッド「init」の呼び出し
+work06.init();
+</script>
+</head>
+<body>
+  <h1>fetchから一覧表示と計算処理</h1>
+  <div>
+    <button id="btn">クリック</button>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>商品名</th><th>金額</th><th>個数</th><th>小計</th>
+      </tr>
+    </thead>
+    <tbody id="result">
+    </tbody>
+  </table>
+</body>
+</html>
