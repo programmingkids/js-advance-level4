@@ -1,0 +1,39 @@
+body, div, p {
+  margin: 0;
+  padding: 0;
+}
+h1, div {
+  margin: 10px;
+}
+#title {
+  font-size: 1em;
+  padding: 0.3em;
+}
+table {
+  margin: 10px;
+  width: 90%;
+  text-align: center;
+  border-collapse: collapse;
+  border-spacing: 0;
+  background: #FFB6C1;
+}
+table tr:nth-child(2n+1) {
+  background: #ffcef2;
+}
+table th {
+  padding: 8px;
+  border: solid 1px #ffffff;
+  background: #FF1493;
+  color: #ffffff;
+}
+table td {
+  padding: 8px;
+  border: solid 1px #ffffff;
+  word-break : break-all;
+}
+table td:nth-of-type(1) {
+  width: 50px;
+}
+table td:nth-of-type(2) {
+  text-align: left;
+}
