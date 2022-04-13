@@ -18,20 +18,19 @@ h1, div {
 </style>
 </head>
 <body>
-  <h1>ページ移動</h1>
-  <div>
-    リンク：
-    <select id="links">
-      <option value="https://www.yahoo.co.jp/">Yahoo</option>
-      <option value="https://www.amazon.co.jp/">Amazon</option>
-      <option value="https://www.youtube.com">Youtube</option>
-      <option value="https://www.rakuten.co.jp/">Rakuten</option>
-    </select>
-  </div>
-  <div>
-    <button id="btn">クリック</button>
-  </div>
-</body>
+<h1>ページ移動</h1>
+<div>
+  リンク：
+  <select id="links">
+    <option value="https://www.yahoo.co.jp/">Yahoo</option>
+    <option value="https://www.amazon.co.jp/">Amazon</option>
+    <option value="https://www.youtube.com">Youtube</option>
+    <option value="https://www.rakuten.co.jp/">Rakuten</option>
+  </select>
+</div>
+<div>
+  <button id="btn">クリック</button>
+</div>
 <script>
 // idがbtnのタグを取得
 const btn = document.getElementById('btn');
@@ -43,4 +42,5 @@ btn.onclick = () => {
   location.href = linkTag.value;
 };
 </script>
+</body>
 </html>

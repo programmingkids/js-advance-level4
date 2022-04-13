@@ -20,12 +20,11 @@ h1, div {
 </style>
 </head>
 <body>
-  <h1>ユーザーエージェント</h1>
-  <div>
-    <button id="btn">クリック</button>
-  </div>
-  <div id="result">未入力</div>
-</body>
+<h1>ユーザーエージェント</h1>
+<div>
+  <button id="btn">クリック</button>
+</div>
+<div id="result">未入力</div>
 <script>
 // idがresultのタグを取得
 const result = document.getElementById('result');
@@ -37,4 +36,5 @@ btn.onclick = () => {
   result.innerHTML = navigator.userAgent;
 };
 </script>
+</body>
 </html>

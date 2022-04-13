@@ -20,12 +20,11 @@ h1, div {
 </style>
 </head>
 <body>
-  <h1>入力画面</h1>
-  <div>
-    <button id="btn">クリック</button>
-  </div>
-  <div id="result">未入力</div>
-</body>
+<h1>入力画面</h1>
+<div>
+  <button id="btn">クリック</button>
+</div>
+<div id="result">未入力</div>
 <script>
 // idがresultのタグを取得
 const result = document.getElementById('result');
@@ -33,7 +32,7 @@ const result = document.getElementById('result');
 const btn = document.getElementById('btn');
 // btnをクリックしたら
 btn.onclick = () => {
-  // 入力画面を表示して、結果を取得
+  // 入力画面を表示して、入力内容を取得
   const value = prompt('名前を入力してください');
   
   // 入力した値が空でなければ
@@ -43,4 +42,5 @@ btn.onclick = () => {
   }
 };
 </script>
+</body>
 </html>

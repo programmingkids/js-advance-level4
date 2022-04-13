@@ -17,14 +17,13 @@ h1, div {
 </style>
 </head>
 <body>
-  <h1>画像表示</h1>
-  <div>
-    <button id="btn">クリック</button>
-  </div>
-  <div>
-    <img id="image" />
-  </div>
-</body>
+<h1>画像表示</h1>
+<div>
+  <button id="btn">クリック</button>
+</div>
+<div>
+  <img id="image" />
+</div>
 <script>
 // 画像ファイル名の配列
 const images = [
@@ -43,7 +42,7 @@ const imageTag = document.getElementById('image');
 const btn = document.getElementById('btn');
 // btnをクリックしたら
 btn.onclick = () => {
-  // imageタグのsrc属性に画像を設定
+  // imageタグのsrc属性に画像を表示
   imageTag.src = images[index];
   // インデックスを加算
   index++;
@@ -54,4 +53,5 @@ btn.onclick = () => {
   }
 };
 </script>
+</body>
 </html>

@@ -20,27 +20,26 @@ h1, div {
 </style>
 </head>
 <body>
-  <h1>ラジオボタン</h1>
-  <div>
-    好きな食べ物：
-    <label for="pizza">
-      <input type="radio" name="food" id="pizza" value="pizza">ピザ
-    </label>
-    <label for="sushi">
-      <input type="radio" name="food" id="sushi" value="sushi">寿司
-    </label>
-    <label for="curry">
-      <input type="radio" name="food" id="curry" value="curry">カレー
-    </label>
-    <label for="ramen">
-      <input type="radio" name="food" id="ramen" value="ramen">ラーメン
-    </label>
-  </div>
-  <div>
-    <button id="btn">クリック</button>
-  </div>
-  <div id="result">未入力</div>
-</body>
+<h1>ラジオボタン</h1>
+<div>
+  好きな食べ物：
+  <label for="pizza">
+    <input type="radio" name="food" id="pizza" value="pizza">ピザ
+  </label>
+  <label for="sushi">
+    <input type="radio" name="food" id="sushi" value="sushi">寿司
+  </label>
+  <label for="curry">
+    <input type="radio" name="food" id="curry" value="curry">カレー
+  </label>
+  <label for="ramen">
+    <input type="radio" name="food" id="ramen" value="ramen">ラーメン
+  </label>
+</div>
+<div>
+  <button id="btn">クリック</button>
+</div>
+<div id="result">未入力</div>
 <script>
 // idがresultのタグを取得
 const result = document.getElementById('result');
@@ -62,4 +61,5 @@ btn.onclick = () => {
   }
 };
 </script>
+</body>
 </html>

@@ -22,23 +22,22 @@ h1, div {
 </style>
 </head>
 <body>
-  <h1>入力フォーム</h1>
-  <div>
-    名前：<input type="text" id="name">
-  </div>
-  <div>
-    血液型：
-    <select id="bloodType">
-      <option value="A型">A型</option>
-      <option value="B型">B型</option>
-      <option value="O型">O型</option>
-      <option value="AB型">AB型</option>
-    </select>
-  </div>
-  <div>
-    <button id="btn">クリック</button>
-  </div>
-</body>
+<h1>入力フォーム</h1>
+<div>
+  名前：<input type="text" id="name">
+</div>
+<div>
+  血液型：
+  <select id="bloodType">
+    <option value="A型">A型</option>
+    <option value="B型">B型</option>
+    <option value="O型">O型</option>
+    <option value="AB型">AB型</option>
+  </select>
+</div>
+<div>
+  <button id="btn">クリック</button>
+</div>
 <script>
 // idがbtnのタグを取得
 const btn = document.getElementById('btn');
@@ -55,4 +54,5 @@ btn.onclick = () => {
   alert(text);
 };
 </script>
+</body>
 </html>

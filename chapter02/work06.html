@@ -24,21 +24,20 @@ h1, div {
 </style>
 </head>
 <body>
-  <h1>セレクトボックス</h1>
-  <div>
-    好きな音楽：
-    <select id="music">
-      <option value="rock">ロック</option>
-      <option value="pops">ポップス</option>
-      <option value="anime">アニソン</option>
-      <option value="vocaloid">ボーカロイド</option>
-    </select>
-  </div>
-  <div>
-    <button id="btn">クリック</button>
-  </div>
-  <div id="result">未入力</div>
-</body>
+<h1>セレクトボックス</h1>
+<div>
+  好きな音楽：
+  <select id="music">
+    <option value="rock">ロック</option>
+    <option value="pops">ポップス</option>
+    <option value="anime">アニソン</option>
+    <option value="vocaloid">ボーカロイド</option>
+  </select>
+</div>
+<div>
+  <button id="btn">クリック</button>
+</div>
+<div id="result">未入力</div>
 <script>
 // idがresultのタグを取得
 const result = document.getElementById('result');
@@ -52,4 +51,5 @@ btn.onclick = () => {
   result.innerHTML = `好きな音楽は${musicTag.value}ですね`;
 };
 </script>
+</body>
 </html>
