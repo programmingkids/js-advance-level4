@@ -36,9 +36,8 @@ class PocketMoneyBook {
   }
   
   async getInitialData() {
-    // クリックしたときに動作するメソッド
-    // 現在表示しているデータを空にする
-    this.result.innerHTML = '';
+    // 初期データを表示するためのメソッド
+    // URLからデータを取得して表示する
     // URLにリクエストして、データを取得
     const response = await fetch(this.url);
     // JSONデータを取得
@@ -48,7 +47,7 @@ class PocketMoneyBook {
   }
   
   showData(data) {
-    // データを表示する
+    // データを表示するメソッド
     // JSONデータは配列なので繰り返し処理
     data.forEach((value) => {
       // 1行分のデータを表示
@@ -93,7 +92,7 @@ class PocketMoneyBook {
   }
   
   handleClick(event) {
-    // クリックしたときに動作するメソッド
+    // クリックしたときのイベント用メソッド
     // 項目の値を取得
     const item = this.itemTag.value;
     // 入出金の値を取得
