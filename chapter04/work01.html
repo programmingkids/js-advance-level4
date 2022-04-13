@@ -33,7 +33,7 @@ class Work01 {
   }
   
   handleOnLoad(event) {
-    // Windowが読み込まれた時に動作するメソッド
+    // Windowが読み込まれたときのイベント用メソッド
     // idがresultのタグを取得
     this.result = document.getElementById('result');
     
@@ -44,12 +44,13 @@ class Work01 {
   }
   
   handleClick(event) {
-    // クリックしたときに動作するメソッド
+    // クリックしたときのイベント用メソッド
     // タイマーを起動
     setTimeout(this.handleSetTimeout, 2000);
   }
   
   handleSetTimeout() {
+    // setTimeoutで待機時間終了したときのメソッド
     // resultタグに文字を表示
     this.result.innerHTML += '2秒後に表示します<br>';
   }

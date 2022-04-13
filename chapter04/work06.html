@@ -11,20 +11,20 @@ body, div, p {
 h1, div {
   margin: 10px;
 }
-table{
+table {
   margin: 10px;
   width: 80%;
   border-collapse:separate;
   border-spacing: 0;
 }
-table th:first-child{
+table th:first-child {
   border-radius: 5px 0 0 0;
 }
-table th:last-child{
+table th:last-child {
   border-radius: 0 5px 0 0;
   border-right: 1px solid #3c6690;
 }
-table th{
+table th {
   text-align: center;
   color:white;
   background: linear-gradient(#829ebc,#225588);
@@ -35,7 +35,7 @@ table th{
   width: 25%;
   padding: 10px 0;
 }
-table td{
+table td {
   text-align: center;
   border-left: 1px solid #a8b7c5;
   border-bottom: 1px solid #a8b7c5;
@@ -44,7 +44,7 @@ table td{
   width: 25%;
   padding: 10px 0;
 }
-table td:last-child{
+table td:last-child {
   border-right: 1px solid #a8b7c5;
 }
 table tr:last-child td:first-child {
@@ -68,7 +68,7 @@ class Work06 {
   }
   
   handleOnLoad(event) {
-    // Windowが読み込まれた時に動作するメソッド
+    // Windowが読み込まれたときのイベント用メソッド
     // idがresultのタグを取得
     this.result = document.getElementById('result');
     
@@ -82,7 +82,7 @@ class Work06 {
   }
   
   async handleClick(event) {
-    // クリックしたときに動作するメソッド
+    // クリックしたときのイベント用メソッド
     // 現在表示しているデータを空にする
     this.result.innerHTML = '';
     // URLにリクエストして、データを取得
@@ -92,7 +92,7 @@ class Work06 {
     // JSONデータは配列なので繰り返し処理
     data.forEach((value) => {
       // 今回はresultタグはtbodyタグ
-      // 取得データのオブジェクトを分割代入
+      // 取得したオブジェクトを分割代入
       const {name, price, quantity} = value;
       // tdタグで商品名を作成
       const tdTagName = document.createElement('td');
@@ -105,6 +105,7 @@ class Work06 {
       tdTagQuantity.innerHTML = quantity;
       // tdタグで小計を作成
       const tdTagSubtotal = document.createElement('td');
+      // 小計は金額×個数で計算
       tdTagSubtotal.innerHTML = parseInt(price) * parseInt(quantity);
       
       // trタグで1行を作成

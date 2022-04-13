@@ -32,7 +32,7 @@ class Work04 {
   }
   
   handleOnLoad(event) {
-    // Windowが読み込まれた時に動作するメソッド
+    // Windowが読み込まれたときのイベント用メソッド
     // idがresultのタグを取得
     this.result = document.getElementById('result');
     
@@ -46,7 +46,8 @@ class Work04 {
   }
   
   async handleClick(event) {
-    // クリックしたときに動作するメソッド
+    // クリックしたときのイベント用メソッド
+    // このメソッドは非同期処理用Asyncメソッド
     // URLにリクエストして、データを取得
     const response = await fetch(this.url);
     // JSONデータを取得

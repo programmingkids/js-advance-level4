@@ -33,7 +33,7 @@ class Work03 {
   }
   
   handleOnLoad(event) {
-    // Windowが読み込まれた時に動作するメソッド
+    // Windowが読み込まれたときのイベント用メソッド
     // idがresultのタグを取得
     this.result = document.getElementById('result');
 
@@ -44,7 +44,7 @@ class Work03 {
   }
   
   handleClick(event) {
-    // クリックしたときに動作するメソッド
+    // クリックしたときのイベント用メソッド
     // timerが起動中は多重起動しない
     if ( this.timer != null ) {
       return;
@@ -54,6 +54,7 @@ class Work03 {
   }
   
   handleSetInterval() {
+    // setIntervalで待機時間が終了したときのメソッド
     // 現在の時刻を文字列表記で取得
     const nowDate = new Date().toLocaleString();
     // resultタグに文字を表示
