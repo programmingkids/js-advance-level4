@@ -74,17 +74,17 @@ class Work12 {
   }
   
   handleFucus(event) {
-    // フォーカスしたときに動作するメソッド
+    // フォーカスしたときのイベント用メソッド
     // resultタグに文字を表示
-    const tagName = event.target.id;
-    this.result.innerHTML += `${tagName}にフォーカスしました<br>`;
+    const tagID = event.target.id;
+    this.result.innerHTML += `${tagID}にフォーカスしました<br>`;
   }
   
   handleBlur(event) {
-    // フォーカスを失ったときに動作するメソッド
+    // フォーカスを失ったときのイベント用メソッド
     // resultタグに文字を表示
-    const tagName = event.target.id;
-    this.result.innerHTML += `${tagName}にフォーカスを失いました<br>`;
+    const tagID = event.target.id;
+    this.result.innerHTML += `${tagID}がフォーカスを失いました<br>`;
   }
 }
 

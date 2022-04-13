@@ -44,7 +44,7 @@ class Work09 {
   }
   
   handleOnLoad(event) {
-    // Windowが読み込まれた時に動作するメソッド
+    // Windowが読み込まれた時に動作するイベント用メソッド
     // idがresultのタグを取得
     this.result = document.getElementById('result');
     
@@ -60,7 +60,7 @@ class Work09 {
   }
   
   handleInput(event) {
-    // inputタグ、textareaタグで入力したときに動作するメソッド
+    // inputタグ、textareaタグで入力したときのイベント用メソッド
     // 入力した文字をresultのタグにコピーする
     // 入力した値を取得
     let value = event.target.value;

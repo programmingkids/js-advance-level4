@@ -46,7 +46,7 @@ class Work10 {
     this.musicTag = document.getElementById('music');
     // musicタグを変更したときの処理の登録
     this.musicTag.addEventListener('change', this.handleChange);
-
+    
     // nameがfoodのタグを取得（複数のタグを取得）
     this.foodTags = document.getElementsByName('food');
     // nameがfoodのタグを配列で保持しているので、forEachで繰り返し
@@ -57,7 +57,7 @@ class Work10 {
   }
   
   handleChange(event) {
-    // セレクトボックス、ラジオボタンで変更した時に動作する
+    // セレクトボックス、ラジオボタンで変更したときのイベント用メソッド
     // 入力した文字をresultのタグにコピーする
     // 変更した値を取得
     const value = event.target.value;

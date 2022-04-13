@@ -26,11 +26,13 @@ let count = 0;
 let result;
 
 const handleOnLoad = (event) => {
+  // Windowの読み込みが完了したときに動作するイベント用関数
   // idがresultのタグを取得
   result = document.getElementById('result');
 };
 
 const handleOnClickCountUp = (event) => {
+  // カウントアップボタンをクリックしたときに動作するイベント用関数
   // クリック回数の変数を加算
   count++;
   // resultのタグに文字を表示
@@ -38,6 +40,7 @@ const handleOnClickCountUp = (event) => {
 };
 
 const handleOnClickCountDown = (event) => {
+  // カウントダウンボタンをクリックしたときに動作するイベント用関数
   // クリック回数の変数を減算
   count--;
   // resultのタグに文字を表示
@@ -45,6 +48,7 @@ const handleOnClickCountDown = (event) => {
 };
 
 const handleOnClickCountReset = (event) => {
+  // カウントリセットボタンをクリックしたときに動作するイベント用関数
   // クリック回数の変数を0にする
   count = 0;
   // resultのタグに文字を表示
