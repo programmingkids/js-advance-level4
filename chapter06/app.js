@@ -34,9 +34,8 @@ class Todo {
   }
   
   async getInitialData() {
-    // クリックしたときに動作するメソッド
-    // 現在表示しているデータを空にする
-    this.result.innerHTML = '';
+    // 初期データを表示するメソッド
+    // URLにアクセスしてデータを取得する非同期メソッド
     // URLにリクエストして、データを取得
     const response = await fetch(this.url);
     // JSONデータを取得
@@ -74,7 +73,7 @@ class Todo {
   }
   
   handleClick(event) {
-    // クリックしたときに動作するメソッド
+    // クリックしたときのイベント用メソッド
     // 項目の値を取得
     const title = this.titleTag.value;
     
