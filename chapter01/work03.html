@@ -25,29 +25,29 @@ body, div, p {
 </style>
 </head>
 <body>
-  <h1>フルーツ</h1>
-</body>
+<h1>フルーツ</h1>
 <script>
 // タグオブジェクト作成
 const appleTag = document.createElement('div');
 // タグのテキスト作成
-const appleText = document.createTextNode("リンゴ");
-// タグのテキスト部分を追加
+const appleText = document.createTextNode('リンゴ');
+// タグの子要素としてテキストを追加
 appleTag.appendChild(appleText);
 // タグにclass属性を追加
 appleTag.setAttribute('class', 'red-text');
-// bodyタグの下層にタグを追加
+// bodyタグの子要素としてタグを追加
 document.body.appendChild(appleTag);
 
 // タグオブジェクト作成
 const grapeTag = document.createElement('div');
 // タグのテキスト作成
-const grapeText = document.createTextNode("グレープ");
-// タグのテキスト部分を追加
+const grapeText = document.createTextNode('グレープ');
+// タグの子要素としてテキストを追加
 grapeTag.appendChild(grapeText);
 // タグにclass属性を追加
 grapeTag.setAttribute('class', 'purple-text');
-// bodyタグの下層にタグを追加
+// bodyタグの子要素としてタグを追加
 document.body.appendChild(grapeTag);
 </script>
+</body>
 </html>

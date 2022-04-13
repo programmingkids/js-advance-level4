@@ -32,16 +32,15 @@ li {
 </style>
 </head>
 <body>
-  <h1>金額</h1>
-  <ul id="prices">
-    <li>単価：210</li>
-    <li>単価：300</li>
-    <li>単価：450</li>
-    <li>単価：280</li>
-    <li>単価：360</li>
-  </ul>
-  <div id="result" class="red-text"></div>
-</body>
+<h1>金額</h1>
+<ul id="prices">
+  <li>単価：210</li>
+  <li>単価：300</li>
+  <li>単価：450</li>
+  <li>単価：280</li>
+  <li>単価：360</li>
+</ul>
+<div id="result" class="red-text"></div>
 <script>
 // 合計値を保持する変数
 let total = 0;
@@ -65,6 +64,7 @@ for(const liTag of liTags) {
 const resultTag = document.getElementById('result');
 
 // 合計を結果のタグに代入して表示
-resultTag.innerHTML = '合計：' + total
+resultTag.innerHTML = '合計：' + total;
 </script>
+</body>
 </html>

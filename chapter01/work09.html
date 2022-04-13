@@ -25,10 +25,9 @@ li {
 </style>
 </head>
 <body>
-  <h1>国名と首都</h1>
-  <ul id="nations">
-  </ul>
-</body>
+<h1>国名と首都</h1>
+<ul id="nations">
+</ul>
 <script>
 // 配列の定義
 const nations = {
@@ -49,8 +48,9 @@ for(const [nation, city] of Object.entries(nations)) {
   liTag.innerHTML = `${nation}の首都「${city}」`;
   // liタグのクラス属性の設定
   liTag.setAttribute('class', 'orange-text');
-  // liタグをulタグの下層に追加
+  // ulタグの子要素としてliタグを追加
   ulTag.appendChild(liTag);
 }
 </script>
+</body>
 </html>

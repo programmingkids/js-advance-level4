@@ -25,10 +25,9 @@ li {
 </style>
 </head>
 <body>
-  <h1>国名</h1>
-  <ul id="nations">
-  </ul>
-</body>
+<h1>国名</h1>
+<ul id="nations">
+</ul>
 <script>
 // 配列の定義
 const nations = ['日本', 'アメリカ', 'イギリス', 'ドイツ'];
@@ -44,8 +43,9 @@ for(const nation of nations) {
   liTag.innerHTML = nation;
   // クラス属性の設定
   liTag.setAttribute('class', 'red-text');
-  // liタグをulタグの下層に追加
+  // liタグの子要素としてliタグを追加
   ulTag.appendChild(liTag);
 }
 </script>
+</body>
 </html>

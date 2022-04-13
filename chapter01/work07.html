@@ -27,10 +27,9 @@ li {
 </style>
 </head>
 <body>
-  <h1>リンク</h1>
-  <ul id="links">
-  </ul>
-</body>
+<h1>リンク</h1>
+<ul id="links">
+</ul>
 <script>
 // 配列の定義
 const links = {
@@ -56,10 +55,11 @@ for(const [title, url] of Object.entries(links)) {
   
   // liタグのオブジェクト作成
   const liTag = document.createElement('li');
-  // aタグをliタグの下層に追加
+  // liタグの子要素としてaタグを追加
   liTag.appendChild(aTag);
-  // liタグをulタグの下層に追加
+  // ulタグの子要素としてliタグを追加
   ulTag.appendChild(liTag);
 }
 </script>
+</body>
 </html>

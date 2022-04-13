@@ -32,15 +32,14 @@ li {
 </style>
 </head>
 <body>
-  <h1>音楽</h1>
-  <ul>
-    <li class="red-text">ロック</li>
-    <li class="no-text">ポップス</li>
-    <li class="red-text">アニソン</li>
-    <li class="no-text">ボーカロイド</li>
-    <li class="no-text">クラシック</li>
-  </ul>
-</body>
+<h1>音楽</h1>
+<ul>
+  <li class="red-text">ロック</li>
+  <li class="no-text">ポップス</li>
+  <li class="red-text">アニソン</li>
+  <li class="no-text">ボーカロイド</li>
+  <li class="no-text">クラシック</li>
+</ul>
 <script>
 // クラス名を指定してタグを取得
 const tagList = document.getElementsByClassName('no-text');
@@ -50,4 +49,5 @@ for(const tag of tagList) {
   tag.setAttribute('class', 'no-text blue-text');
 }
 </script>
+</body>
 </html>

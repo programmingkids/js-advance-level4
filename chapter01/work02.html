@@ -11,16 +11,16 @@ body, div, p {
 </style>
 </head>
 <body>
-  <h1>天気予報</h1>
-</body>
+<h1>天気予報</h1>
 <script>
 // h2タグオブジェクト作成
 const h2Tag = document.createElement('h2');
 // h2タグのテキスト作成
-const h2Text = document.createTextNode("晴れ時々くもり");
-// h2タグのテキスト部分を追加
+const h2Text = document.createTextNode('晴れ時々くもり');
+// h2タグの子要素としてテキストを追加
 h2Tag.appendChild(h2Text);
-// bodyタグの下層にh2タグを追加
+// bodyタグの子要素としてh2タグを追加
 document.body.appendChild(h2Tag);
 </script>
+</body>
 </html>
