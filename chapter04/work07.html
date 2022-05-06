@@ -52,13 +52,12 @@ table td {
 class Work07 {
   constructor() {
     // 各メソッドのthisをバインドする
-    this.handleOnLoad = this.handleOnLoad.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    
   }
   
   init() {
     // Windowの読み込みが完了したときの動作の登録
-    window.addEventListener('load', this.handleOnLoad);
+    
   }
   
   handleOnLoad(event) {
@@ -70,47 +69,24 @@ class Work07 {
     this.url = 'https://cog-study.herokuapp.com/js_advance_level4/chapter04/work07/';
     
     // idがbtnのタグを取得
-    this.btnTag = document.getElementById('btn');
+    
     // btnタグをクリックしたときの処理の登録
-    this.btnTag.addEventListener('click', this.handleClick);
+    
   }
   
   async handleClick(event) {
     // クリックしたときに動作するメソッド
-    // 現在表示しているデータを空にする
-    this.result.innerHTML = '';
-    // URLにリクエストして、データを取得
-    const response = await fetch(this.url);
-    // JSONデータを取得
-    const data = await response.json();
-    // JSONデータは配列なので繰り返し処理
-    data.forEach((value) => {
-      // 今回はresultタグはtbodyタグ
-      // 取得データのオブジェクトを分割代入
-      const {title, url} = value;
-      // thタグでサイト名を作成
-      const thTagTitle = document.createElement('th');
-      thTagTitle.innerHTML = title;
-      // aタグでURLを作成
-      const aTagURL = document.createElement('a');
-      aTagURL.setAttribute('href', url);
-      aTagURL.innerHTML = url;
-      // aタグを保持するtdタグを作成
-      const tdTagURL = document.createElement('td');
-      tdTagURL.appendChild(aTagURL);
-      // trタグで1行を作成
-      const trTag = document.createElement('tr');
-      trTag.appendChild(thTagTitle);
-      trTag.appendChild(tdTagURL);
-      this.result.appendChild(trTag);
-    });
+    
+    
+    
+    
   }
 }
 
 // クラス「Work07」のインスタンス作成
-const work07 = new Work07();
+
 // メソッド「init」の呼び出し
-work07.init();
+
 </script>
 </head>
 <body>
