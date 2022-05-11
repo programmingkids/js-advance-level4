@@ -39,27 +39,9 @@ const links = {
   'Rakuten': 'https://www.rakuten.co.jp/',
 };
 
-// ulタグのオブジェクトを取得
-const ulTag = document.getElementById('links');
 
-// オブジェクトに繰り返し処理
-for(const [title, url] of Object.entries(links)) {
-  // aタグのオブジェクト作成
-  const aTag = document.createElement('a');
-  // aタグのhref属性の設定（リンク先の設定）
-  aTag.setAttribute('href', url);
-  // aタグのクラス属性の設定
-  aTag.setAttribute('class', 'link-text');
-  // aタグの文字列を設定
-  aTag.innerHTML = title;
-  
-  // liタグのオブジェクト作成
-  const liTag = document.createElement('li');
-  // liタグの子要素としてaタグを追加
-  liTag.appendChild(aTag);
-  // ulタグの子要素としてliタグを追加
-  ulTag.appendChild(liTag);
-}
+
+
 </script>
 </body>
 </html>

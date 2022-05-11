@@ -32,20 +32,8 @@ li {
 // 配列の定義
 const nations = ['日本', 'アメリカ', 'イギリス', 'ドイツ'];
 
-// ulタグのオブジェクトを取得
-const ulTag = document.getElementById('nations');
 
-// 配列に繰り返し処理
-for(const nation of nations) {
-  // liタグのオブジェクト作成
-  const liTag = document.createElement('li');
-  // 文字列を追加
-  liTag.innerHTML = nation;
-  // クラス属性の設定
-  liTag.setAttribute('class', 'red-text');
-  // liタグの子要素としてliタグを追加
-  ulTag.appendChild(liTag);
-}
+
 </script>
 </body>
 </html>

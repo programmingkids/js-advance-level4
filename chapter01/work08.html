@@ -47,24 +47,9 @@ let total = 0;
 
 // IDを指定してulタグの取得
 const ulTag = document.getElementById('prices');
-// ulタグの下層のliタグのオブジェクトをすべて取得
-const liTags = ulTag.getElementsByTagName('li');
 
-// liタグに繰り返し処理を行う
-for(const liTag of liTags) {
-  // liタグの文字列部分を取得
-  let value = liTag.innerHTML;
-  // 先頭から4文字目以降を切り取る
-  value = value.substring(3);
-  // 数値に変換して合計に加算
-  total += parseInt(value);
-}
 
-// IDを指定して結果を表示するタグを取得
-const resultTag = document.getElementById('result');
 
-// 合計を結果のタグに代入して表示
-resultTag.innerHTML = '合計：' + total;
 </script>
 </body>
 </html>

@@ -37,20 +37,9 @@ const nations = {
   'フランス':'パリ',
 };
 
-// ulタグのオブジェクトを取得
-const ulTag = document.getElementById('nations');
 
-// オブジェクトに繰り返し処理
-for(const [nation, city] of Object.entries(nations)) {
-  // liタグのオブジェクト作成
-  const liTag = document.createElement('li');
-  // liタグのテキスト部分に文字を代入
-  liTag.innerHTML = `${nation}の首都「${city}」`;
-  // liタグのクラス属性の設定
-  liTag.setAttribute('class', 'orange-text');
-  // ulタグの子要素としてliタグを追加
-  ulTag.appendChild(liTag);
-}
+
+
 </script>
 </body>
 </html>
