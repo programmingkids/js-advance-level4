@@ -47,18 +47,9 @@ const result = document.getElementById('result');
 const btn = document.getElementById('btn');
 // btnをクリックしたら
 btn.onclick = () => {
-  // nameがfoodのタグを取得
-  const foodTags = document.getElementsByName('food');
   
-  // foodTagsに繰り返し処理を適用
-  for(const foodTag of foodTags) {
-    // ラジオボタンのチェックがオンの場合
-    if( foodTag.checked ) {
-      // ラジオボタンの値を取得して表示
-      result.innerHTML = `好きな食べ物は${foodTag.value}ですね`;
-      break;
-    }
-  }
+  
+  
 };
 </script>
 </body>

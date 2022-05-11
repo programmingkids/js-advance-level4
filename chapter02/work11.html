@@ -33,25 +33,9 @@ const images = [
   'images/sky004.jpg',
 ];
 
-// 表示する画像のインデックス
-let index = 0;
 
-// idがimageのタグを取得
-const imageTag = document.getElementById('image');
-// idがbtnのタグを取得
-const btn = document.getElementById('btn');
-// btnをクリックしたら
-btn.onclick = () => {
-  // imageタグのsrc属性に画像を表示
-  imageTag.src = images[index];
-  // インデックスを加算
-  index++;
-  // インデックスが配列の要素数を超えたら
-  if (index >= images.length) {
-    // インデックスを0に戻す
-    index = 0;
-  }
-};
+
+
 </script>
 </body>
 </html>

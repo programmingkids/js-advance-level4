@@ -26,24 +26,9 @@ h1, div {
 </div>
 <div id="result">未入力</div>
 <script>
-// idがresultのタグを取得
-const result = document.getElementById('result');
-// idがbtnのタグを取得
-const btn = document.getElementById('btn');
-// btnをクリックしたら
-btn.onclick = () => {
-  // 確認画面を表示して結果を取得
-  const answer = confirm('映画は好きですか？');
-  
-  // 結果を判定
-  if ( answer ) {
-    // OK
-    result.innerHTML = '映画は好きなのですね';
-  } else {
-    // キャンセル
-    result.innerHTML = '映画が好きではないのですね';
-  }
-};
+
+
+
 </script>
 </body>
 </html>

@@ -50,22 +50,9 @@ const result = document.getElementById('result');
 const btn = document.getElementById('btn');
 // btnをクリックしたら
 btn.onclick = () => {
-  // nameがsubjectのタグを取得
-  const subjectTags = document.getElementsByName('subject');
   
-  // 結果の文字列を代入する変数
-  let text = '';
   
-  // subjectTagsに繰り返し処理を適用
-  for(const subjectTag of subjectTags) {
-    // チェックボックスのチェックがオンの場合
-    if( subjectTag.checked ) {
-      text += subjectTag.value + ',';
-    }
-  }
   
-  // チェックボックスの値を取得して表示
-  result.innerHTML = `好きな科目は${text}ですね`;
 };
 </script>
 </body>
