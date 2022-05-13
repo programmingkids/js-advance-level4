@@ -21,40 +21,35 @@ h1, div {
 <script>
 class Work06 {
   constructor() {
-    // クリック回数を保持する変数
-    this.count = 0;
     
-    // 各メソッドのthisをバインドする
-    this.handleOnLoad = this.handleOnLoad.bind(this);
-    this.handleOnClickCountUp = this.handleOnClickCountUp.bind(this);
-    this.handleOnClickCountDown = this.handleOnClickCountDown.bind(this);
-    this.handleOnClickCountReset = this.handleOnClickCountReset.bind(this);
+    
+    
   }
   
   init() {
     // Windowの読み込みが完了したときの動作の登録
-    window.addEventListener('load', this.handleOnLoad);
+    
   }
   
   handleOnLoad(event) {
     // Windowが読み込まれた時に動作するメソッド
     // idがresultのタグを取得
-    this.result = document.getElementById('result');
+    
     
     // idがcountUpのタグを取得
-    this.countUpBtn = document.getElementById('countUp');
+    
     // countUpタグをクリックしたときの動作の登録
-    this.countUpBtn.addEventListener('click', this.handleOnClickCountUp);
+    
     
     // idがcountDownのタグを取得
-    this.countDownBtn = document.getElementById('countDown');
+    
     // countDownタグをクリックしたときの動作の登録
-    this.countDownBtn.addEventListener('click', this.handleOnClickCountDown);
+    
     
     // idがcountResetのタグを取得
-    this.countResetBtn = document.getElementById('countReset');
+    
     // countResetタグをクリックしたときの動作の登録
-    this.countResetBtn.addEventListener('click', this.handleOnClickCountReset);
+    
   }
   
   handleOnClickCountUp(event) {
@@ -83,9 +78,9 @@ class Work06 {
 }
 
 // クラス「Work06」のインスタンス作成
-const work06 = new Work06();
+
 // メソッド「init」の呼び出し
-work06.init();
+
 </script>
 </head>
 <body>

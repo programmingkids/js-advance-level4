@@ -68,54 +68,54 @@ class Work08 {
     // idがred-areaのタグを取得
     this.redAreaTag = document.getElementById('red-area');
     // red-areaタグにカーソルが入ったときの処理の登録
-    this.redAreaTag.addEventListener('mouseover', this.handleOnMouseOverRedArea);
+    
     // red-areaタグからカーソルが出たときの処理の登録
-    this.redAreaTag.addEventListener('mouseout', this.handleOnMouseOut);
+    
     
     // idがgreen-areaのタグを取得
     this.greenAreaTag = document.getElementById('green-area');
     // green-areaタグにカーソルが入ったときの処理の登録
-    this.greenAreaTag.addEventListener('mouseover', this.handleOnMouseOverGreenArea);
+    
     // green-areaタグからカーソルが出たときの処理の登録
-    this.greenAreaTag.addEventListener('mouseout', this.handleOnMouseOut);
+    
     
     // idがblue-areaのタグを取得
     this.blueAreaTag = document.getElementById('blue-area');
     // blue-areaタグにカーソルが入ったときの処理の登録
-    this.blueAreaTag.addEventListener('mouseover', this.handleOnMouseOverBlueArea);
+    
     // blue-areaタグからカーソルが出たときの処理の登録
-    this.blueAreaTag.addEventListener('mouseout', this.handleOnMouseOut);
+    
   }
   
   handleOnMouseOverRedArea(event) {
     // red-areaタグにカーソルが入ったときのイベント用メソッド
     // resultのタグの背景色を赤にする
-    this.result.style.backgroundColor = '#ff0000';
+    
   }
 
   handleOnMouseOverGreenArea(event) {
     // green-areaタグにカーソルが入ったときのイベント用メソッド
     // resultのタグの背景色を緑にする
-    this.result.style.backgroundColor = '#00ff00';
+    
   }
 
   handleOnMouseOverBlueArea(event) {
     // blue-areaタグにカーソルが入ったときのイベント用メソッド
     // resultのタグの背景色を青にする
-    this.result.style.backgroundColor = '#0000ff';
+    
   }
   
   handleOnMouseOut(event) {
     // それぞれのタグからカーソルが出たときのイベント用メソッド
     // resultのタグの背景色を白にする
-    this.result.style.backgroundColor = '#ffffff';
+    
   }
 }
 
 // クラス「Work08」のインスタンス作成
-const work08 = new Work08();
+
 // メソッド「init」の呼び出し
-work08.init();
+
 </script>
 </head>
 <body>

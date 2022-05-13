@@ -38,17 +38,17 @@ const handleOnLoad = (event) => {
   // idがcountUpのタグを取得
   countUpBtn = document.getElementById('countUp');
   // countUpタグをクリックしたときの動作の登録
-  countUpBtn.addEventListener('click', handleOnClickCountUp);
+  
   
   // idがcountDownのタグを取得
   countDownBtn = document.getElementById('countDown');
   // countDownタグをクリックしたときの動作の登録
-  countDownBtn.addEventListener('click', handleOnClickCountDown);
+  
   
   // idがcountResetのタグを取得
   countResetBtn = document.getElementById('countReset');
   // countResetタグをクリックしたときの動作の登録
-  countResetBtn.addEventListener('click', handleOnClickCountReset);
+  
 };
 
 const handleOnClickCountUp = (event) => {
@@ -76,7 +76,7 @@ const handleOnClickCountReset = (event) => {
 };
 
 // Windowの読み込みが完了したときの動作の登録
-window.addEventListener('load', handleOnLoad);
+
 </script>
 </head>
 <body>

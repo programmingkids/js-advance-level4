@@ -52,39 +52,41 @@ class Work12 {
     this.result = document.getElementById('result');
     
     // idがnameのタグを取得
-    this.nameTag = document.getElementById('name');
+    
     // nameタグにフォーカスしたときの処理の登録
-    this.nameTag.addEventListener('focus', this.handleFucus);
+    
     // nameタグがフォーカスを失ったときの処理の登録
-    this.nameTag.addEventListener('blur', this.handleBlur);
+    
 
     // idがageのタグを取得
-    this.ageTag = document.getElementById('age');
+    
     // ageタグにフォーカスしたときの処理の登録
-    this.ageTag.addEventListener('focus', this.handleFucus);
+    
     // ageタグがフォーカスを失ったときの処理の登録
-    this.ageTag.addEventListener('blur', this.handleBlur);
+    
 
     // idがmusicのタグを取得
-    this.musicTag = document.getElementById('music');
+    
     // musicタグにフォーカスしたときの処理の登録
-    this.musicTag.addEventListener('focus', this.handleFucus);
+    
     // musicタグがフォーカスを失ったときの処理の登録
-    this.musicTag.addEventListener('blur', this.handleBlur);
+    
   }
   
   handleFucus(event) {
     // フォーカスしたときのイベント用メソッド
     // resultタグに文字を表示
-    const tagID = event.target.id;
-    this.result.innerHTML += `${tagID}にフォーカスしました<br>`;
+    
+    
+    
   }
   
   handleBlur(event) {
     // フォーカスを失ったときのイベント用メソッド
     // resultタグに文字を表示
-    const tagID = event.target.id;
-    this.result.innerHTML += `${tagID}がフォーカスを失いました<br>`;
+    
+    
+    
   }
 }
 

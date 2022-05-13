@@ -43,33 +43,28 @@ class Work11 {
     this.result = document.getElementById('result');
     
     // nameがsubjectのタグを取得（複数のタグを取得）
-    this.subjectTags = document.getElementsByName('subject');
+    
     // nameがsubjectのタグを配列で保持しているので、forEachで繰り返し
-    this.subjectTags.forEach(subjectTag => {
-      // 個別のsubjectタグを変更したときの処理の登録
-      subjectTag.addEventListener('change',this.handleChange);
-    });
+    
+    
+    
   }
   
   handleChange(event) {
     // チェックボックスで変更したときのイベント用メソッド
     // resultのタグを空にする
-    this.result.innerHTML = '';
+    
     // nameがsubjectタグは配列なので、繰り返し処理で対応
-    this.subjectTags.forEach(subjectTag => {
-      // チェックされているタグの判定
-      if( subjectTag.checked) {
-        // チェックされているタグは、resultタグに反映
-        this.result.innerHTML += subjectTag.value + ', ';
-      }
-    });
+    
+    
+    
   }
 }
 
 // クラス「Work11」のインスタンス作成
-const work11 = new Work11();
+
 // メソッド「init」の呼び出し
-work11.init();
+
 </script>
 </head>
 <body>
