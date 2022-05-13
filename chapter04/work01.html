@@ -38,28 +38,28 @@ class Work01 {
     this.result = document.getElementById('result');
     
     // idがbtnのタグを取得
-    this.btnTag = document.getElementById('btn');
+    
     // btnタグをクリックしたときの処理の登録
-    this.btnTag.addEventListener('click', this.handleClick);
+    
   }
   
   handleClick(event) {
     // クリックしたときのイベント用メソッド
     // タイマーを起動
-    setTimeout(this.handleSetTimeout, 2000);
+    
   }
   
   handleSetTimeout() {
     // setTimeoutで待機時間終了したときのメソッド
     // resultタグに文字を表示
-    this.result.innerHTML += '2秒後に表示します<br>';
+    
   }
 }
 
 // クラス「Work01」のインスタンス作成
-const work01 = new Work01();
+
 // メソッド「init」の呼び出し
-work01.init();
+
 </script>
 </head>
 <body>

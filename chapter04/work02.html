@@ -49,34 +49,30 @@ class Work02 {
   handleClick(event) {
     // クリックしたときのイベント用メソッド
     // timerが起動中は多重起動しない
-    if( this.timer != null ) {
-      return;
-    }
+    
+    
+    
     // タイマーを起動　1秒ごとに呼び出す
-    this.timer = setInterval(this.handleSetInterval, 1000);
+    
   }
   
   handleSetInterval() {
     // setIntervalで待機時間が終了したときのメソッド
     // カウンタ変数を加算
-    this.count++;
+    
     // resultタグに文字を表示
-    this.result.innerHTML = this.count;
+    
     // カウンタ変数が10を超えたらタイマーを停止
-    if( this.count >= 10 ) {
-      // タイマーを停止
-      clearInterval(this.timer);
-      // 各変数を初期化
-      this.timer = null;
-      this.count = 0;
-    }
+    
+    
+    
   }
 }
 
 // クラス「Work02」のインスタンス作成
-const work02 = new Work02();
+
 // メソッド「init」の呼び出し
-work02.init();
+
 </script>
 </head>
 <body>

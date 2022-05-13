@@ -46,26 +46,26 @@ class Work03 {
   handleClick(event) {
     // クリックしたときのイベント用メソッド
     // timerが起動中は多重起動しない
-    if ( this.timer != null ) {
-      return;
-    }
+    
+    
+    
     // タイマーを起動　1秒ごとに呼び出す
-    this.timer = setInterval(this.handleSetInterval, 1000);
+    
   }
   
   handleSetInterval() {
     // setIntervalで待機時間が終了したときのメソッド
     // 現在の時刻を文字列表記で取得
-    const nowDate = new Date().toLocaleString();
+    
     // resultタグに文字を表示
-    this.result.innerHTML = nowDate;
+    
   }
 }
 
 // クラス「Work03」のインスタンス作成
-const work03 = new Work03();
+
 // メソッド「init」の呼び出し
-work03.init();
+
 </script>
 </head>
 <body>

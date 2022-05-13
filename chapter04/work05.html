@@ -81,43 +81,25 @@ class Work05 {
     this.btnTag.addEventListener('click', this.handleClick);
   }
   
-  async handleClick(event) {
+  handleClick(event) {
     // クリックしたときのイベント用メソッド
     // 現在表示しているデータを空にする
-    this.result.innerHTML = '';
+    
     // URLにリクエストして、データを取得
-    const response = await fetch(this.url);
+    
     // JSONデータを取得
-    const data = await response.json();
+    
     // JSONデータは配列なので繰り返し処理
-    data.forEach((value) => {
-      // 今回はresultタグはtbodyタグ
-      // 取得データのオブジェクトを分割代入
-      const {name, age, hobby} = value;
-      // tdタグで名前を作成
-      const tdTagName = document.createElement('td');
-      tdTagName.innerHTML = name;
-      // tdタグで年齢を作成
-      const tdTagAge = document.createElement('td');
-      tdTagAge.innerHTML = age;
-      // tdタグで趣味を作成
-      const tdTagHobby = document.createElement('td');
-      tdTagHobby.innerHTML = hobby;
-      
-      // trタグで1行を作成
-      const trTag = document.createElement('tr');
-      trTag.appendChild(tdTagName);
-      trTag.appendChild(tdTagAge);
-      trTag.appendChild(tdTagHobby);
-      this.result.appendChild(trTag);
-    });
+    
+    
+    
   }
 }
 
 // クラス「Work05」のインスタンス作成
-const work05 = new Work05();
+
 // メソッド「init」の呼び出し
-work05.init();
+
 </script>
 </head>
 <body>

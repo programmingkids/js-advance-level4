@@ -45,25 +45,24 @@ class Work04 {
     this.btnTag.addEventListener('click', this.handleClick);
   }
   
-  async handleClick(event) {
+  handleClick(event) {
     // クリックしたときのイベント用メソッド
     // このメソッドは非同期処理用Asyncメソッド
     // URLにリクエストして、データを取得
-    const response = await fetch(this.url);
+    
     // JSONデータを取得
-    const data = await response.json();
+    
     // JSONデータは配列なので繰り返し処理
-    data.forEach((value) => {
-      // resultタグに文字を表示
-      this.result.innerHTML += `${value}<br>`;
-    });
+    
+    
+    
   }
 }
 
 // クラス「Work04」のインスタンス作成
-const work04 = new Work04();
+
 // メソッド「init」の呼び出し
-work04.init();
+
 </script>
 </head>
 <body>
